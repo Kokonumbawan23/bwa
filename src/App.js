@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import 'assets/scss/style.scss'
+import React from 'react'
+import { BrowserRouter as Router,createBrowserRouter,Route,Routes } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+import LandingPage from 'pages/LandingPage';
+import './assets/scss/style.scss';
+import './elements/Star/index.scss'
+import ErrorPage from 'pages/errorPage';
+
+const App = createBrowserRouter([{
+    path: '/',
+    element: <LandingPage />,
+    errorElement: <ErrorPage />,
+},]);
 
 export default App;
